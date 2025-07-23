@@ -1,0 +1,47 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0d5eaf; /* A shade of blue for the background */
+  color: white;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  z-index: 1;
+  position: relative;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 40px;
+  color: white; /* White color for the title */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* Subtle white text shadow */
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn {
+  padding: 20px 40px;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  color: #0d5eaf; /* Blue color for button text */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for buttons */
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.4); /* White-toned box shadow */
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 1); /* Solid white on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6); /* Enhanced white box shadow on hover */
+}
