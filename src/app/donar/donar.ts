@@ -1,15 +1,14 @@
 import { Component, AfterViewInit, OnDestroy } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 declare const THREE: any; // Declare THREE to avoid TypeScript errors
 
 @Component({
-  selector: 'app-home',
-  imports: [RouterLink],
-  templateUrl: './home.html',
-  styleUrl: './home.css'
+  selector: 'app-donar',
+  imports: [],
+  templateUrl: './donar.html',
+  styleUrl: './donar.css'
 })
-export class HomeComponent implements AfterViewInit, OnDestroy {
+export class DonarComponent implements AfterViewInit, OnDestroy {
 
   private scene: any;
   private camera: any;
@@ -24,7 +23,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     this.animate();
     this.addMouseListener();
     this.addResizeListener();
-    this.addAnimationClasses();
+    // No animations like the home page, so no addAnimationClasses()
   }
 
   ngOnDestroy(): void {
@@ -46,7 +45,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   initThreeJs(): void {
     // Scene setup
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color(0x0a192f); // Set background color of the scene
+    this.scene.background = new THREE.Color(0xffa500); // Set background color to orange
     this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const canvas = document.querySelector('#bg-canvas');
     if (canvas) {
@@ -74,7 +73,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
       // Material for the particles
       const particlesMaterial = new THREE.PointsMaterial({
         size: 0.005,
-        color: 0xcccccc // A light gray color for visibility against dark background
+        color: 0xffffff // White particles for contrast
       });
 
       this.particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
@@ -132,31 +131,4 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     }
   };
 
-  addAnimationClasses(): void {
-    const fadeInDown = document.querySelector('.animate-fade-in-down');
-    const fadeInUp = document.querySelector('.animate-fade-in-up');
-    const fadeIn = document.querySelector('.animate-fade-in');
-
-    if(fadeInDown) fadeInDown.classList.add('opacity-0', 'transform', '-translate-y-4', 'transition-all', 'duration-1000', 'ease-out');
-    if(fadeInUp) fadeInUp.classList.add('opacity-0', 'transform', 'translate-y-4', 'transition-all', 'duration-1000', 'ease-out');
-    if(fadeIn) fadeIn.classList.add('opacity-0', 'transition-opacity', 'duration-1000', 'ease-out');
-
-    setTimeout(() => {
-        if(fadeInDown) {
-            fadeInDown.classList.remove('opacity-0', '-translate-y-4');
-        }
-    }, 100);
-
-    setTimeout(() => {
-        if(fadeInUp) {
-            fadeInUp.classList.remove('opacity-0', 'translate-y-4');
-        }
-    }, 300);
-
-    setTimeout(() => {
-        if(fadeIn) {
-            fadeIn.classList.remove('opacity-0');
-        }
-    }, 500);
-  };
 }
