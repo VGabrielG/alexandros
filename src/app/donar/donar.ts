@@ -45,7 +45,7 @@ export class DonarComponent implements AfterViewInit, OnDestroy {
   initThreeJs(): void {
     // Scene setup
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color(0xffa500); // Set background color to orange
+    this.scene.background = new THREE.Color(0x0a192f); // Set background color to blue
     this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const canvas = document.querySelector('#bg-canvas');
     if (canvas) {
@@ -73,7 +73,7 @@ export class DonarComponent implements AfterViewInit, OnDestroy {
       // Material for the particles
       const particlesMaterial = new THREE.PointsMaterial({
         size: 0.005,
-        color: 0xffffff // White particles for contrast
+        color: 0xcccccc // Light gray particles for contrast
       });
 
       this.particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);

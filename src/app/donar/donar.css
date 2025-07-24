@@ -1,0 +1,42 @@
+/* Custom styles to integrate with Tailwind */
+body {
+    font-family: 'Inter', sans-serif;
+    overflow: hidden; /* Hide scrollbars caused by canvas */
+    /* Removed background-color from body */
+}
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place canvas behind content */
+}
+.content-container {
+    position: relative;
+    z-index: 1;
+    color: white; /* White text color */
+}
+/* Custom glassmorphism effect for buttons */
+.btn-glass {
+    background: rgba(30, 41, 59, 0.7); /* Dark semi-transparent background for buttons */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white; /* White text color for buttons */
+    cursor: pointer; /* Add this line for the hand cursor */
+}
+
+/* Add simple fade-in animations with Tailwind classes */
+/* These are utility classes, actual animation is handled by JS */
+.animate-fade-in-down {
+  /* initial state before animation */
+}
+
+.animate-fade-in-up {
+  /* initial state before animation */
+}
+
+.animate-fade-in {
+  /* initial state before animation */
+}
